@@ -1,0 +1,34 @@
+import azure.functions as func
+import logging,json,os,requests 
+
+app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+
+@app.route(route="ask")
+def ask(req: func.HttpRequest) -> func.HttpResponse:
+    endpoint="https://ailanguage3300.cognitiveservices.azure.com/language/:query-knowledgebases?projectName=CourseKnowledgebase&api-version=2021-10-01&deploymentName=production"
+    api_key=os.envion["Language_API_KEY"]
+    headers={
+    "Ocp-Apim-Subscription-Key": api_key,
+    "Content-Type": "application/json"
+    }
+
+    logging.info(api_key)
+    logging.info(endpoint)
+
+    req_body=req.get_json()
+    question=req_body.get('question')
+    data={
+              "question": question,
+              "top": 1
+       }
+
+       response = requests.post(endpoint, headers=headers, json=data) 
+
+       result = response.json()
+
+       answers = result.get("answers", [])
+       answer=answers[0]
+       out = {"answer" : answer}
+
+       logging.info(out)
+       return func.HttpResponse(json.dumps(out),  mimetype="application/json") 
