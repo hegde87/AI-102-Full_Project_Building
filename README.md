@@ -1,4 +1,5 @@
 # AI-102-Full_Project_Building
+
 --------------------------------
 Step1:- Building Knowledge Base 
 ---------------------------------
@@ -9,10 +10,12 @@ Step1:- Building Knowledge Base
 
 ## Key Learning ##
 ------------------
-1) Understand Azure AI Language to Build the Knowledge Base  [Q-A]
+1) Understand Azure AI Language to Build the Knowledge Base  [Q-A].
+
 2) Build Knowledge Base 
     >Collect and Organize FAQs into a structured format
     >Import questions and answers into AZURE Language Studio using a file 
+
 3)Build a Chatbot 
     >Build a Python program that can interact witht the knowledge base.
     >Create a bot like interface for users
@@ -23,20 +26,23 @@ Step1:- Building Knowledge Base
     >Host the Chatbot interface as a Static Website. We wil use Az Storage Accounts.
 
 
-==========================
-Go to AZURE PORTAL 
+==================
+# Go to AZURE PORTAL 
+------------------
 
 1)Create -->L=AI Language  [Language Service] -->select -->Custom question answering
        -->as part of this --->  Azure AI Search "will also be created"  [just bcoz we l=selected Custom Q&A]
 
+```
 Go to -->Language Studio 
 Sign In >> Select Subscription >> Resource Type >> Resource Name >> Done
 Click -->Understand Question and Conversational Language  -->Select -->Custom question answering  -->Create a New Project ---> Select Language --> 
     >Name :- CourseKnowledgebase 
     Next -->Create Project 
+```
 
 #### Note #####
-We have a 2 ways of doing this
+## We have a 2 ways of doing this
 
 1st way:- - from the portal itself --> Edit Knowledge Base --> + -->Add a New Question Answer Pair 
     >Question :- 
@@ -50,12 +56,16 @@ GoTo --> Manage Sources --->Add Sources [URLs / Files / ChitChat]
 -------------------------------------------------------
 Step2 :- Adding Follow up Question in terms of Exsting Q&A 
 --------------------------------------------------------
+```
 1)Do you provide training packages for corporates and Business? 
 Yes, we provide trainings for teams and organizations
+```
 
-We want a Follow-Up  =>May Be -->Knowledge will ask more Follow up Questions
+# We want a Follow-Up  =>May Be -->Knowledge will ask more Follow up Questions
+
+```
 Q)Would u like more details on Corporate Training Pricing Options
-
+```
 its like linking existing questions together in a follow up fashion.
 
 -----------------------------------------------------------------------------
@@ -72,7 +82,9 @@ https://ailanguage3300.cognitiveservices.azure.com/language/:query-knowledgebase
 
 Sample Request:
 ---------------
+```
 curl -X POST "https://ailanguage3300.cognitiveservices.azure.com/language/:query-knowledgebases?projectName=CourseKnowledgebase&api-version=2021-10-01&deploymentName=production" -H "Ocp-Apim-Subscription-Key: "xxxxxxxxxxxxxxxxxxx" -H "Content-Type: application/json" -d "{\"top\":3,\"question\":\"YOUR_QUESTION_HERE\",\"includeUnstructuredSources\":true,\"confidenceScoreThreshold\":\"YOUR_SCORE_THRESHOLD_HERE\",\"answerSpanRequest\":{\"enable\":true,\"topAnswersWithSpan\":1,\"confidenceScoreThreshold\":\"YOUR_SCORE_THRESHOLD_HERE\"},\"filters\":{\"metadataFilter\":{\"logicalOperation\":\"YOUR_LOGICAL_OPERATION_HERE\",\"metadata\":[{\"key\":\"YOUR_ADDITIONAL_PROP_KEY_HERE\",\"value\":\"YOUR_ADDITIONAL_PROP_VALUE_HERE\"}]}}}"
+```
 
 # Here, we can use the 
 ```
