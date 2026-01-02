@@ -3,8 +3,8 @@
 --------------------------------
 Step1:- Building Knowledge Base 
 ---------------------------------
-1)Create a set of 20+ FAQs about platform and cources
-2)Azure Language Studio -->Host and Publisj the knowledge Base
+1)Create a set of 20+ FAQs about platform and cources,
+2)Azure Language Studio -->Host and Publisj the knowledge Base,
 3)Python Chatbot -->Build a simple interface to interact with Knowledge base.
 
 
@@ -13,20 +13,19 @@ Step1:- Building Knowledge Base
 1) Understand Azure AI Language to Build the Knowledge Base  [Q-A].
 
 2) Build Knowledge Base 
-    >Collect and Organize FAQs into a structured format
-    >Import questions and answers into AZURE Language Studio using a file 
+    >Collect and Organize FAQs into a structured format.
+    >Import questions and answers into AZURE Language Studio using a file. 
 
 3)Build a Chatbot 
     >Build a Python program that can interact witht the knowledge base.
-    >Create a bot like interface for users
+    >Create a bot like interface for users.
     >Build the interface in React.js that will call the Python program.
-
+ 
 4)Deploy the Solution -->Azure
     >Deploy the python module that interacts with the Knowledge Base using Azure Functions
     >Host the Chatbot interface as a Static Website. We wil use Az Storage Accounts.
 
 
-==================
 # Go to AZURE PORTAL 
 ------------------
 
