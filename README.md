@@ -3,8 +3,10 @@
 --------------------------------
 Step1:- Building Knowledge Base 
 ---------------------------------
-1)Create a set of 20+ FAQs about platform and cources,
-2)Azure Language Studio -->Host and Publisj the knowledge Base,
+1)Create a set of 20+ FAQs about platform and cources.
+
+2)Azure Language Studio -->Host and Publisj the knowledge Base.
+
 3)Python Chatbot -->Build a simple interface to interact with Knowledge base.
 
 
