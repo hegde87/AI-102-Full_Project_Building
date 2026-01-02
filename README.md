@@ -15,16 +15,23 @@ Step1:- Building Knowledge Base
 1) Understand Azure AI Language to Build the Knowledge Base  [Q-A].
 
 2) Build Knowledge Base 
+    
     >Collect and Organize FAQs into a structured format.
+
     >Import questions and answers into AZURE Language Studio using a file. 
 
 3)Build a Chatbot 
+    
     >Build a Python program that can interact witht the knowledge base.
+
     >Create a bot like interface for users.
+    
     >Build the interface in React.js that will call the Python program.
  
 4)Deploy the Solution -->Azure
-    >Deploy the python module that interacts with the Knowledge Base using Azure Functions
+    
+    >Deploy the python module that interacts with the Knowledge Base using Azure .
+
     >Host the Chatbot interface as a Static Website. We wil use Az Storage Accounts.
 
 
@@ -42,7 +49,6 @@ Click -->Understand Question and Conversational Language  -->Select -->Custom qu
     Next -->Create Project 
 ```
 
-#### Note #####
 ## We have a 2 ways of doing this
 
 1st way:- - from the portal itself --> Edit Knowledge Base --> + -->Add a New Question Answer Pair 
@@ -62,7 +68,7 @@ Step2 :- Adding Follow up Question in terms of Exsting Q&A
 Yes, we provide trainings for teams and organizations
 ```
 
-# We want a Follow-Up  =>May Be -->Knowledge will ask more Follow up Questions
+##  We want a Follow-Up  =>May Be -->Knowledge will ask more Follow up Questions
 
 ```
 Q)Would u like more details on Corporate Training Pricing Options
