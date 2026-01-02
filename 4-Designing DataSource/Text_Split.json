@@ -1,0 +1,57 @@
+// This allows to brake your text into Chunk of Text
+// reference link: https://learn.microsoft.com/en-us/azure/search/cognitive-search-skill-textsplit
+{
+  "@odata.etag": "\"0x8DE49E4ED27D259\"",
+  "name": "sentiment-skillset",
+  "description": "Skillset to enrich documents with sentiment analysis",
+  "skills": [
+    {
+      "@odata.type": "#Microsoft.Skills.Text.SplitSkill",
+      "name": "split-skill",
+      "description": "Split the document content into sentences",
+      "context": "/document",
+      "defaultLanguageCode": "en",
+      "textSplitMode": "sentences",
+      "mazimumPageLength": 500,
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/content",
+          "inputs": []
+        }
+      ],
+      "outputs": [
+        {
+          "name": "textItems",
+          "targetName": "sentences"
+        }
+      ]
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Text.V3.SentimentSkill",
+      "name": "sentiment-skill",
+      "description": "Detects the sentiment of the document text",
+      "context": "/document",
+      "defaultLanguageCode": "en",
+      "includeOpinionMining": false,
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/content",
+          "inputs": []
+        }
+      ],
+      "outputs": [
+        {
+          "name": "sentiment",
+          "targetName": "sentimentScore"
+        }
+      ]
+    }
+  ],
+  "cognitiveServices": {
+    "@odata.type": "#Microsoft.Azure.Search.CognitiveServicesByKey",
+    "description": "Cognitive Services resource",
+    "key": "<redacted>"
+  }
+}
