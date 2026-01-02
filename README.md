@@ -74,14 +74,15 @@ Sample Request:
 ---------------
 curl -X POST "https://ailanguage3300.cognitiveservices.azure.com/language/:query-knowledgebases?projectName=CourseKnowledgebase&api-version=2021-10-01&deploymentName=production" -H "Ocp-Apim-Subscription-Key: "xxxxxxxxxxxxxxxxxxx" -H "Content-Type: application/json" -d "{\"top\":3,\"question\":\"YOUR_QUESTION_HERE\",\"includeUnstructuredSources\":true,\"confidenceScoreThreshold\":\"YOUR_SCORE_THRESHOLD_HERE\",\"answerSpanRequest\":{\"enable\":true,\"topAnswersWithSpan\":1,\"confidenceScoreThreshold\":\"YOUR_SCORE_THRESHOLD_HERE\"},\"filters\":{\"metadataFilter\":{\"logicalOperation\":\"YOUR_LOGICAL_OPERATION_HERE\",\"metadata\":[{\"key\":\"YOUR_ADDITIONAL_PROP_KEY_HERE\",\"value\":\"YOUR_ADDITIONAL_PROP_VALUE_HERE\"}]}}}"
 
-Here, we can use the 
-curl --> command 
-POST --->REQUEST 
-Against the url -->https://ailanguage3300.cognitiveservices.azure.com/language/:query-knowledgebases?projectName=CourseKnowledgebase&api-version=2021-10-01&deploymentName=production
-Against our project --->projectName=CourseKnowledgebase
-Against our deployment name -->deploymentName=production
-Using Subscription Key -->For Authentication --->Apim-Subscription-Key 
-
+# Here, we can use the 
+```
+curl --> command, 
+POST --->REQUEST, 
+Against the url -->https://ailanguage3300.cognitiveservices.azure.com/language/:query-knowledgebases?projectName=CourseKnowledgebase&api-version=2021-10-01&deploymentName=production,
+Against our project --->projectName=CourseKnowledgebase,
+Against our deployment name -->deploymentName=production,
+Using Subscription Key -->For Authentication --->Apim-Subscription-Key. 
+```
 
 ----------------------------------------------------------------------------------
 Step4:- Develop a Simple Python Programm that can interact with the Knowledge Base
