@@ -1,0 +1,57 @@
+{
+  "@odata.context": "https://search33001.search.windows.net/$metadata#indexers/$entity",
+  "@odata.etag": "\"0x8DE49EAC9012BEF\"",
+  "name": "sentiment-indexer",
+  "description": null,
+  "dataSourceName": "azureblob-1767338744365-datasource",
+  "skillsetName": "sentiment-skillset",
+  "targetIndexName": "sentiment-index01",
+  "disabled": null,
+  "schedule": {
+    "interval": "PT2H",
+    "startTime": "2026-01-02T00:00:00Z"
+  },
+  "parameters": {
+    "batchSize": null,
+    "maxFailedItems": null,
+    "maxFailedItemsPerBatch": null,
+    "configuration": {
+      "dataToExtract": "contentAndMetadata",
+      "parsingMode": "default"
+    }
+  },
+  "fieldMappings": [
+    {
+      "sourceFieldName": "metadata_storage_name",
+      "targetFieldName": "id",
+      "mappingFunction": {
+        "name": "base64Encode",
+        "parameters": null
+      }
+    }
+  ],
+  "outputFieldMappings": [
+    {
+      "sourceFieldName": "/document/content",
+      "targetFieldName": "content",
+      "mappingFunction": null
+    },
+    {
+      "sourceFieldName": "/document/metadata_storage_name",
+      "targetFieldName": "metadata_storage_name",
+      "mappingFunction": null
+    },
+    {
+      "sourceFieldName": "/document/metadata_storage_path",
+      "targetFieldName": "metadata_storage_path",
+      "mappingFunction": null
+    },
+    {
+      "sourceFieldName": "/document/sentimentScore",
+      "targetFieldName": "sentimentScore",
+      "mappingFunction": null
+    }
+  ],
+  "cache": null,
+  "encryptionKey": null
+}

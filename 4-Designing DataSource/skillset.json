@@ -1,0 +1,33 @@
+// Reference Link:-
+//  https://learn.microsoft.com/en-us/azure/search/cognitive-search-skill-sentiment-v3
+
+{
+  "name": "sentiment-skillset",
+  "description": "Skillset to enrich documents with sentiment analysis",
+  "skills": [
+    {
+      "@odata.type": "#Microsoft.Skills.Text.V3.SentimentSkill",
+      "name": "sentiment-skill",
+      "description": "Detects the sentiment of the document text",
+      "context": "/document",
+      "defaultLanguageCode": "en",
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/content"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "sentiment",
+          "targetName": "sentimentScore"
+        }
+      ]
+    }
+  ],
+  "cognitiveServices": {
+    "@odata.type": "#Microsoft.Azure.Search.CognitiveServicesByKey",
+    "description": "Cognitive Services resource",
+    "key": "<Put Az AI Services>" # Resource Management > key1 
+  }
+}
