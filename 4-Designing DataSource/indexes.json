@@ -38,6 +38,12 @@
       "retrievable": true
     },
     {
+        "name": "sentences",
+        "type": "Collection(Edm.String)",
+        "searchable": true,
+        "retrievable": true
+    },
+    {
       "name": "sentimentScore",
       "type": "Edm.String",
       "filterable": true,

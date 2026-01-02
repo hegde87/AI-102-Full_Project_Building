@@ -37,6 +37,11 @@
       "mappingFunction": null
     },
     {
+      "sourceFieldName": "/document/sentences",
+      "targetFieldName": "sentences",
+      "mappingFunction": null        
+    },
+    {
       "sourceFieldName": "/document/metadata_storage_name",
       "targetFieldName": "metadata_storage_name",
       "mappingFunction": null
@@ -47,7 +52,7 @@
       "mappingFunction": null
     },
     {
-      "sourceFieldName": "/document/sentimentScore",
+      "sourceFieldName": "/document/sentences/*/sentimentScore",
       "targetFieldName": "sentimentScore",
       "mappingFunction": null
     }

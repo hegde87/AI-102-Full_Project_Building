@@ -31,13 +31,13 @@
       "@odata.type": "#Microsoft.Skills.Text.V3.SentimentSkill",
       "name": "sentiment-skill",
       "description": "Detects the sentiment of the document text",
-      "context": "/document",
+      "context": "/document/sentences/*",
       "defaultLanguageCode": "en",
       "includeOpinionMining": false,
       "inputs": [
         {
           "name": "text",
-          "source": "/document/content",
+          "source": "/document/sentences/*",
           "inputs": []
         }
       ],
